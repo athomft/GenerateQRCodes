@@ -3,7 +3,7 @@ import random
 from openpyxl import Workbook
 
 
-def genrate_random_10_digit():
+def generate_random_10_digit():
     return ''.join(random.choices('0123456789', k=10))
 
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
             print("Please enter a valid number.")
 
     for i in range(num_qr_codes):
-        random_data = genrate_random_10_digit()
+        random_data = generate_random_10_digit()
         numbers.append(random_data)
         filename = f"{random_data}.png"
         generate_qr_code(random_data, filename)
