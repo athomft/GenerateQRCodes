@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/athomft/qr-code-generator)](https://github.com/athomft/qr-code-generator/commits/master)
+[![GitHub last commit](https://img.shields.io/github/last-commit/athomft/GenerateQRCodes)](https://github.com/athomft/GenerateQRCodes/commits/master)
 
 This Python script generates QR codes with random 10-digit numbers and saves them in a specified Excel file.
 
