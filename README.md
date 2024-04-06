@@ -26,4 +26,6 @@ This Python script generates QR codes with random 10-digit numbers and saves the
 
 3. Run the script:
    ```bash
-   python qr_code_generator.py
+   python3 qr_code_generator.py
+
+4. Enter the number of QR codes to generate when prompted.
