@@ -47,5 +47,5 @@ You can install the required libraries using pip:
 After running the script and entering the number of QR codes to generate, the script generates QR codes with random 10-digit numbers and saves them as PNG images. The list of generated numbers is also saved to an Excel file named "QR Codes.xlsx".
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
