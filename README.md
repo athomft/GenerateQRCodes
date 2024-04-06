@@ -19,15 +19,15 @@ This Python script generates QR codes with random 10-digit numbers and saves the
 1. Clone this repository:
    ```bash
    git clone https://github.com/yourusername/qr-code-generator.git
-
+   ```
 2. Clone this repository:
    ```bash
    pip install qrcode[pil] openpyxl
-
+   ```
 3. Run the script:
    ```bash
    python3 qr_code_generator.py
-
+   ```
 4. Enter the number of QR codes to generate when prompted.
 
 ## Installation
@@ -35,3 +35,17 @@ This Python script generates QR codes with random 10-digit numbers and saves the
 You can install the required libraries using pip:
    ```bash
    pip install qrcode[pil] openpyxl
+   ```
+## Code Explanation
+
+- `generate_random_10_digit()`: Generates a random 10-digit number.
+- `generate_qr_code(data, filename)`: Generates a QR code with the provided data and saves it as a PNG image.
+- `save_to_excel(numbers)`: Saves the generated 10-digit numbers to an Excel file named "QR Codes.xlsx".
+
+## Sample Output
+
+After running the script and entering the number of QR codes to generate, the script generates QR codes with random 10-digit numbers and saves them as PNG images. The list of generated numbers is also saved to an Excel file named "QR Codes.xlsx".
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
