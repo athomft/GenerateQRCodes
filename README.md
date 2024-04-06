@@ -20,12 +20,6 @@ This Python script generates QR codes with random 10-digit numbers and saves the
    ```bash
    git clone https://github.com/yourusername/qr-code-generator.git
 
-2. Install the required libraries:
-  ```bash
+2. Clone this repository:
+   ```bash
    pip install qrcode[pil] openpyxl
-
-3. Run the script:
-  ```bash
-   python qr_code_generator.py
-
-4. Enter the number of QR codes to generate when prompted.
