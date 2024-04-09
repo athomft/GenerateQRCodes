@@ -19,7 +19,7 @@ def generate_qr_code(data, filename):
     img = qr.make_image(fill='black', back_color='white')
     img.save(filename)
 
-
+# Save to excel function
 def save_to_excel(numbers):
     wb = Workbook()
     ws = wb.active
