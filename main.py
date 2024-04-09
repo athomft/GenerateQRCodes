@@ -6,7 +6,7 @@ from openpyxl import Workbook
 def generate_random_10_digit():
     return ''.join(random.choices('0123456789', k=10))
 
-
+# Generate QR code function
 def generate_qr_code(data, filename):
     qr = qrcode.QRCode(
         version=1,
