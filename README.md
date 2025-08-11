@@ -18,7 +18,7 @@ This Python script generates QR codes with random 10-digit numbers and saves the
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/qr-code-generator.git
+   git clone https://github.com/athomft/qr-code-generator.git
    ```
 2. Clone this repository:
    ```bash
