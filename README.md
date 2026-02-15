@@ -17,6 +17,7 @@ This Python script generates QR codes with unique random 10-digit numbers and sa
 ## Installation
 
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/athomft/GenerateQRCodes.git
    cd GenerateQRCodes
@@ -29,57 +30,20 @@ This Python script generates QR codes with unique random 10-digit numbers and sa
 
 ## Usage
 
-### Interactive Mode
+Run the script from the terminal:
 
-Run the script and enter the number of QR codes when prompted:
 ```bash
 python main.py
 ```
 
-### Command-Line Mode
-
-Generate QR codes directly with command-line arguments:
-```bash
-# Generate 10 QR codes
-python main.py -n 10
-
-# Specify custom output directory
-python main.py -n 10 -o my_qr_codes
-
-# Specify custom Excel filename
-python main.py -n 10 -e my_codes.xlsx
-
-# Combine options
-python main.py -n 10 -o custom_output -e custom_file.xlsx
-```
-
-### Command-Line Options
-
-- `-n, --number`: Number of QR codes to generate
-- `-o, --output`: Output directory (default: `output`)
-- `-e, --excel`: Excel filename (default: `QR_Codes.xlsx`)
-- `-h, --help`: Show help message
-## Features
-
-- ✓ Generates unique 10-digit random numbers (no duplicates)
-- ✓ Creates QR codes as PNG images
-- ✓ Organizes output in a dedicated directory
-- ✓ Saves all numbers to an Excel file
-- ✓ Command-line arguments for automation
-- ✓ Error handling for file operations
-- ✓ Progress tracking during generation
-
 ## Code Explanation
 
-- `generate_random_10_digit(existing_numbers)`: Generates a unique random 10-digit number not in the existing set.
-- `generate_qr_code(data, filename)`: Generates a QR code with the provided data and saves it as a PNG image with error handling.
-- `save_to_excel(numbers, filepath)`: Saves the generated 10-digit numbers to a specified Excel file.
-- `create_output_directory(output_dir)`: Creates the output directory if it doesn't exist.
-- `parse_arguments()`: Parses command-line arguments for flexible usage.
+The script generates unique 10-digit identifiers, creates corresponding QR code images using the `qrcode` library, and exports the data mapping to an Excel file using `openpyxl`.
 
 ## Sample Output
 
 After running the script, you'll see:
+
 ```
 QR code 1/10 generated: 1234567890
 Saved as output/1234567890.png
@@ -93,5 +57,5 @@ Saved as output/9876543210.png
 ```
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
