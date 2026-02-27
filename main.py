@@ -1,7 +1,6 @@
 import qrcode
 import random
 import argparse
-import os
 import sys
 from pathlib import Path
 from openpyxl import Workbook
@@ -13,10 +12,16 @@ QR_BOX_SIZE = 10
 QR_BORDER = 4
 DEFAULT_OUTPUT_DIR = "output"
 DEFAULT_EXCEL_FILENAME = "QR_Codes.xlsx"
+EXCEL_HEADER = "Code"
 
 
 def generate_random_10_digit(existing_numbers):
-    """Generate a unique random 10-digit number not in existing_numbers set."""
+    """Generate a unique random 10-digit number not in existing_numbers set.
+
+    Uses up to 10000 attempts. With 10^10 possible values this is sufficient
+    for typical batch sizes; for very large batches (e.g. millions), consider
+    a deterministic approach (e.g. range + shuffle) to guarantee uniqueness.
+    """
     max_attempts = 10000
     for _ in range(max_attempts):
         number = ''.join(random.choices('0123456789', k=10))
@@ -37,7 +42,7 @@ def generate_qr_code(data, filename):
         qr.add_data(data)
         qr.make(fit=True)
         img = qr.make_image(fill='black', back_color='white')
-        img.save(filename)
+        img.save(str(filename))
         return True
     except Exception as e:
         print(f"Error generating QR code: {e}", file=sys.stderr)
@@ -49,10 +54,10 @@ def save_to_excel(numbers, filepath):
     try:
         wb = Workbook()
         ws = wb.active
-        ws.append(["QR Codes"])
+        ws.append([EXCEL_HEADER])
         for number in numbers:
             ws.append([number])
-        wb.save(filepath)
+        wb.save(str(filepath))
         return True
     except Exception as e:
         print(f"Error saving to Excel: {e}", file=sys.stderr)
@@ -127,7 +132,7 @@ if __name__ == '__main__':
             existing_numbers.add(random_data)
             numbers.append(random_data)
             
-            filename = os.path.join(args.output, f"{random_data}.png")
+            filename = Path(args.output) / f"{random_data}.png"
             if generate_qr_code(random_data, filename):
                 successful += 1
                 print(f"QR code {i+1}/{num_qr_codes} generated: {random_data}")
@@ -140,7 +145,7 @@ if __name__ == '__main__':
     
     # Save to Excel
     if numbers:
-        excel_path = os.path.join(args.output, args.excel)
+        excel_path = Path(args.output) / args.excel
         if save_to_excel(numbers, excel_path):
             print(f"\n✓ Successfully generated {successful}/{num_qr_codes} QR codes")
             print(f"✓ Numbers saved to {excel_path}")

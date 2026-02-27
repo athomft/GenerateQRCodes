@@ -12,6 +12,7 @@ This Python script generates QR codes with unique random 10-digit numbers and sa
 - [Installation](#installation)
 - [Code Explanation](#code-explanation)
 - [Sample Output](#sample-output)
+- [Testing](#testing)
 - [License](#license)
 
 ## Installation
@@ -30,11 +31,33 @@ This Python script generates QR codes with unique random 10-digit numbers and sa
 
 ## Usage
 
-Run the script from the terminal:
+Run the script from the terminal. You can either specify the number of QR codes on the command line or be prompted interactively.
+
+**Generate a fixed number of codes (non-interactive):**
+
+```bash
+python main.py -n 10
+```
+
+**Custom output directory and Excel filename:**
+
+```bash
+python main.py -n 5 -o my_codes -e codes.xlsx
+```
+
+**Interactive mode (prompts for count):**
 
 ```bash
 python main.py
 ```
+
+**Options:**
+
+| Option | Short | Description |
+|--------|--------|-------------|
+| `--number` | `-n` | Number of QR codes to generate |
+| `--output` | `-o` | Output directory (default: `output`) |
+| `--excel` | `-e` | Excel filename (default: `QR_Codes.xlsx`) |
 
 ## Code Explanation
 
@@ -54,6 +77,23 @@ Saved as output/9876543210.png
 
 ✓ Successfully generated 10/10 QR codes
 ✓ Numbers saved to output/QR_Codes.xlsx
+```
+
+## Testing
+
+Install dependencies (including pytest), then run:
+
+```bash
+pip install -r requirements.txt
+python -m pytest tests/ -v
+```
+
+Alternatively, use a virtual environment:
+
+```bash
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python -m pytest tests/ -v
 ```
 
 ## License
