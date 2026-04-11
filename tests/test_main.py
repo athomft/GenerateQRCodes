@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from main import (
+from genqr.main import (
     generate_random_10_digit,
     generate_qr_code,
     save_to_excel,
